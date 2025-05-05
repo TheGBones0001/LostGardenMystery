@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
     {
         if (botoesAtivados >= totalBotoes)
         {
-            Debug.Log("Todos os botões ativados! Vitória!");
             SceneManager.LoadScene("VictoryScene");
         }
     }

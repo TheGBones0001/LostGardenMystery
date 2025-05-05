@@ -51,7 +51,6 @@ public class TileManager : MonoBehaviour
 
         if (!groupPositions.ContainsKey(groupName))
         {
-            Debug.LogWarning($"Grupo '{groupName}' não encontrado no TrapManager.");
             return;
         }
 
@@ -64,6 +63,9 @@ public class TileManager : MonoBehaviour
 
     private void SetTileStateAt(Vector3 position, bool active)
     {
+        if (tilemap == null)
+            return;
+
         var tileMapPosition = tilemap.WorldToCell(position);
 
         if (customTiles.ContainsKey(tileMapPosition))
